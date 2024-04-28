@@ -1,0 +1,27 @@
+{
+  "name": "browser-extension-firebase-persistence",
+  "version": "1.0.0",
+  "description": "Custom firebase persistence for browser extensions",
+  "homepage": "https://github.com/ivliag/browser-extension-firebase-persistence#readme",
+  "bugs": {
+    "url": "https://github.com/ivliag/browser-extension-firebase-persistence/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivliag/browser-extension-firebase-persistence.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@plasmohq/storage": "^1.15.0"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.1.12",
+    "typescript": "^5.9.2"
+  }
+}
