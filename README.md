@@ -17,22 +17,25 @@ npm install browser-extension-firebase-persistence
 ## Usage
 
 ```javascript
-import { createBrowserExtensionPersistence } from 'browser-extension-firebase-persistence';
-import { initializeAuth } from '@firebase/auth';
+import { createBrowserExtensionPersistence } from "browser-extension-firebase-persistence";
+import { initializeAuth } from "@firebase/auth";
 
 const browserStoragePersistence = createBrowserExtensionPersistence();
 
 const auth = initializeAuth(firebaseApp, {
-  persistence: browserStoragePersistence
+  persistence: browserStoragePersistence,
 });
 ```
 
 ## Why This Is Needed
 
 In browser extensions, Firebase authentication data needs to be shared between:
+
 - Content scripts
 - Background scripts
 - Popup pages
 - Options pages
 
 Chrome Storage is the only reliable way to share this authentication state across all these contexts, as regular web storage (localStorage, sessionStorage) is isolated per origin and not accessible across extension components.
+
+More details in [Firebase JS SDK GitHub discussion](https://github.com/firebase/firebase-js-sdk/issues/1874).
