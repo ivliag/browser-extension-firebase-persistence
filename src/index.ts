@@ -17,7 +17,7 @@ export function createFirebasePersistance() {
       const storage = new Storage({ area: "local" });
       storage.watch({
         [this.STORAGE_KEY]: this.combinedListener.bind(
-          this
+          this,
         ) as (typeof this)["combinedListener"],
       });
       this.storage = storage;
@@ -29,7 +29,7 @@ export function createFirebasePersistance() {
 
     async _set<T>(key: string, value: T): Promise<null> {
       const storageValue = await this.storage.get<{ [key: string]: T }>(
-        this.STORAGE_KEY
+        this.STORAGE_KEY,
       );
       return this.storage.set(this.STORAGE_KEY, {
         ...storageValue,
@@ -46,7 +46,7 @@ export function createFirebasePersistance() {
 
     async _remove<T>(key: string): Promise<null> {
       const storageValue = await this.storage.get<{ [key: string]: T }>(
-        this.STORAGE_KEY
+        this.STORAGE_KEY,
       );
       return this.storage.set(this.STORAGE_KEY, {
         ...storageValue,
@@ -66,14 +66,14 @@ export function createFirebasePersistance() {
 
     combinedListener(change: chrome.storage.StorageChange) {
       type StorageChangeItem = { [key: string]: unknown };
-      
+
       Object.entries(this.listeners).forEach(([key, listeners]) => {
         if (
           (change.oldValue as StorageChangeItem)?.[key] !==
           (change.newValue as StorageChangeItem)?.[key]
         ) {
           listeners.forEach((listener) =>
-            listener((change.newValue as StorageChangeItem)?.[key])
+            listener((change.newValue as StorageChangeItem)?.[key]),
           );
         }
       });
