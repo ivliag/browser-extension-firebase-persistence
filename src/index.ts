@@ -2,12 +2,12 @@ import { Storage } from "@plasmohq/storage";
 
 type StorageListener = (newValue: unknown) => void;
 
-export function createFirebasePersistance() {
+export function createBrowserExtensionPersistence() {
   return class {
     static type = "LOCAL" as const;
     type = "LOCAL" as const;
 
-    STORAGE_KEY = "FIREBASE_PERSISTANCE";
+    STORAGE_KEY = "FIREBASE_PERSISTENCE";
 
     listeners: Record<string, StorageListener[]> = {};
 
