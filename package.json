@@ -11,10 +11,11 @@
     "url": "git+https://github.com/ivliag/browser-extension-firebase-persistence.git"
   },
   "license": "ISC",
-  "author": "",
+  "author": "Ivan Liagushkin",
   "type": "commonjs",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {

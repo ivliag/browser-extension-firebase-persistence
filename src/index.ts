@@ -65,13 +65,15 @@ export function createFirebasePersistance() {
     }
 
     combinedListener(change: chrome.storage.StorageChange) {
+      type StorageChangeItem = { [key: string]: unknown };
+      
       Object.entries(this.listeners).forEach(([key, listeners]) => {
         if (
-          (change.oldValue as unknown)?.[key] !==
-          (change.newValue as unknown)?.[key]
+          (change.oldValue as StorageChangeItem)?.[key] !==
+          (change.newValue as StorageChangeItem)?.[key]
         ) {
           listeners.forEach((listener) =>
-            listener((change.newValue as unknown)?.[key])
+            listener((change.newValue as StorageChangeItem)?.[key])
           );
         }
       });
