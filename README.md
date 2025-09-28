@@ -6,7 +6,7 @@ A custom Firebase persistence implementation for browser extensions that stores 
 
 This library provides a custom [Firebase Auth state persistence](https://firebase.google.com/docs/auth/web/auth-state-persistence) solution specifically designed for browser extension contexts.
 
-Browser extensions have unique requirements when it comes to sharing authentication state across different origins. Traditional web storage mechanisms don't work across extension contexts, making it necessary to use [Chrome Storage API](https://developer.chrome.com/docs/extensions/reference/api/storage) to persist and share Firebase authentication data between different parts of the extension.
+Traditional web storage mechanisms don't work across extension contexts, making it necessary to use [Chrome Storage API](https://developer.chrome.com/docs/extensions/reference/api/storage) to persist and share Firebase authentication data between different parts of the extension.
 
 ## Installation
 
