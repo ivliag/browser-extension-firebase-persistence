@@ -39,3 +39,7 @@ In browser extensions, Firebase authentication data needs to be shared between:
 Chrome Storage is the only reliable way to share this authentication state across all these contexts, as regular web storage (localStorage, sessionStorage) is isolated per origin and not accessible across extension components.
 
 More details in [Firebase JS SDK GitHub discussion](https://github.com/firebase/firebase-js-sdk/issues/1874).
+
+## License
+
+[MIT](./LICENSE)
